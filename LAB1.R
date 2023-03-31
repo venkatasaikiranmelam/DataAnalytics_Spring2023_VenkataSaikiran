@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy")
+setwd("C:/Users/sk")
 # Cleaning memory
 rm(list=ls())
 
@@ -8,7 +8,7 @@ library("readxl")
 
 # Reading CSV file
 
-file = "C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2010EPI_data.csv"
+file = "C:/Users/sk/Data/2010EPI_data.csv"
 
 headers = read.csv(file, skip = 1, header = F, nrows = 1, as.is = T)
 df = read.csv(file, skip =2 , header = F)
@@ -18,7 +18,7 @@ names(df)
 
 
 # Read the second sheet of latitude.xlsx: latitude_2
-df2 <- read_excel("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2010EPI_data.xls", sheet="EPI2010_all countries")
+df2 <- read_excel("C:/Users/sk/2010EPI_data.xls", sheet="EPI2010_all countries")
 df2
 
 # Structure of Dataframe
@@ -73,7 +73,7 @@ df2
 attach(df2)
 library(ggplot2)
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/histogram$EPI.png")
+png(filename="C:/Users/sk/histogram$EPI.png")
 hist(EPI, seq(30., 95., 1.0), prob=TRUE)
 lines(density(EPI,na.rm=TRUE,bw="SJ"))
 rug(EPI) 
@@ -175,8 +175,8 @@ qqplot(df4$EPI,df4$AIR_H)
 # Now comparing 2016 and 2010 data sets
 
 
-epi_2010 <- read_excel("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2010EPI_data.xls", sheet="EPI2010_all countries")
-epi_2016 <- read_excel("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2016-epi.xlsx", sheet="Indicator Scores")
+epi_2010 <- read_excel("C:/Users/sk/2010EPI_data.xls", sheet="EPI2010_all countries")
+epi_2016 <- read_excel("C:/Users/sk/2016-epi.xlsx", sheet="Indicator Scores")
 
 head(epi_2016)
 
@@ -240,7 +240,7 @@ qqline(lognorm_df$d)
 
 # Filtering EPI Landlock
 
-epi_2010 <- read_excel("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2010EPI_data.xls", sheet="EPI2010_all countries")
+epi_2010 <- read_excel("C:/Users/sk/2010EPI_data.xls", sheet="EPI2010_all countries")
 head(epi_2010)
 str(epi_2010)
 
@@ -253,7 +253,7 @@ EPILand  =  epi_2010[!Landlock,]
 Eland <- EPILand[!is.na(EPILand$EPI),]
 
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/histogram$EPILand.png")
+png(filename="C:/Users/sk/histogram$EPILand.png")
 hist(Eland$EPI, seq(30., 95., 1.0), prob=TRUE)
 lines(density(Eland$EPI,na.rm=TRUE,bw="SJ"))
 rug(Eland$EPI) 
@@ -271,7 +271,7 @@ EPI_No_Surfacewater =  epi_2010[!No_surface_water,]
 ESurfacewater <- EPI_No_Surfacewater[!is.na(EPI_No_Surfacewater$EPI),]
 
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/histogram$EPI_Nosurfacewater.png")
+png(filename="C:/Users/sk/histogram$EPI_Nosurfacewater.png")
 hist(ESurfacewater$EPI)
 lines(density(ESurfacewater$EPI,na.rm=TRUE,bw=1.))
 rug(ESurfacewater$EPI) 
@@ -291,7 +291,7 @@ EDesert <- EPI_Desert[!is.na(EPI_Desert$EPI),]
 
 hist(EDesert$EPI)
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/histogram$EPI_Desert.png")
+png(filename="C:/Users/sk/histogram$EPI_Desert.png")
 hist(EDesert$EPI)
 lines(density(EDesert$EPI,na.rm=TRUE,bw=1.))
 rug(EDesert$EPI) 
@@ -307,7 +307,7 @@ E_High_Population_Density <- EPI_High_Population_Density[!is.na(EPI_High_Populat
 
 hist(E_High_Population_Density$EPI)
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/histogram$EPI_HPD.png")
+png(filename="C:/Users/sk/histogram$EPI_HPD.png")
 hist(E_High_Population_Density$EPI, seq(30., 95., 1.0), prob=TRUE)
 lines(density(E_High_Population_Density$EPI,na.rm=TRUE,bw=1.))
 rug(E_High_Population_Density$EPI) 
