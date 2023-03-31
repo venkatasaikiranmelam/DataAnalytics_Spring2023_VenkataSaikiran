@@ -1,7 +1,7 @@
 library(gdata) 
 library(dplyr)
 #faster xls reader but requires perl!
-bronx1<- read.csv("C:/Users/91983/OneDrive/Desktop/RPI-material/DA/Assignment4/NYC_Citywide_Annualized_Calendar_Sales_Update.csv")
+bronx1<- read.csv("C:/Users/sk/NYC_Citywide_Annualized_Calendar_Sales_Update.csv")
 bronx1<-bronx1[which(bronx1$GROSS.SQUARE.FEET!="0" & bronx1$LAND.SQUARE.FEET!="0" & bronx1$SALE.PRICE!="$0"),]
 
 
