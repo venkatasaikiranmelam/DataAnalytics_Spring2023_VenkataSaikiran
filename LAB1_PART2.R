@@ -1,10 +1,10 @@
 ###lab1 part2
 rm(list=ls())
 getwd()
-setwd("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy")
+setwd("C:/Users/sk")
 
 
-file = "C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/2010EPI_data.csv"
+file = "C:/Users/sk/2010EPI_data.csv"
 
 headers = read.csv(file, skip = 1, header = F, nrows = 1, as.is = T)
 df = read.csv(file, skip =2 , header = F)
@@ -36,31 +36,31 @@ par(pty="s")
 
 qqnorm(EPI)
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/qqplot1.png")
+png(filename="C:/Users/sk/qqplot1.png")
 qqplot(EPI,DALY)
 dev.off()
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/boxplot1.png")
+png(filename="C:/Users/sk/boxplot1.png")
 boxplot(EPI,DALY)
 dev.off()
 
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/qqplot2.png")
+png(filename="C:/Users/sk/qqplot2.png")
 qqplot(EPI,ENVHEALTH)
 dev.off()
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/qqplot3.png")
+png(filename="C:/Users/sk/qqplot3.png")
 qqplot(DALY,AIR_H)
 dev.off()
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/qqplot4.png")
+png(filename="C:/Users/sk/qqplot4.png")
 qqplot(WATER_H, WATER_E)
 dev.off()
 
 
 
 ### regression
-multivariate <- read.csv("C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/Data/multivariate.csv")
+multivariate <- read.csv("C:/Users/sk/multivariate.csv")
 attach(multivariate)
 multivariate
 
@@ -93,13 +93,13 @@ plot()
 
 # Creating Plots
 # Chapter 2
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/mtcars1.png")
+png(filename="C:/Users/sk/mtcars1.png")
 plot(mtcars$wt,mtcars$mpg)
 dev.off()
 
 library(ggplot2)
 
-png(filename="C:/Users/91983/OneDrive/Desktop/RPI-work/DA/repo/DataAnalyticsSpring2023_SainathReddy/LAB1_graphs/ggplot_mtcars1.png")
+png(filename="C:/Users/sk/ggplot_mtcars1.png")
 qplot(mtcars$wt,mtcars$mpg)
 dev.off()
 
